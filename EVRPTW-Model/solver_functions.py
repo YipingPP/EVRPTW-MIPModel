@@ -600,7 +600,6 @@ def create_robust_lp_model(data, average_times, N, Q, C, r, g, thet):
     for n in N:
         problem_lp += y[n, 'O1'] == Q
 
-    # 为每对点 (i, j) 添加互斥约束，确保同一辆车不能同时选择 i->j 和 j->i
     # Add the mutual exclusion constraint only for pairs of nodes in T
     for n in N:
         for i in T:
